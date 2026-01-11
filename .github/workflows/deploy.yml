@@ -26,7 +26,7 @@ jobs:
           node-version: 22
 
       - name: Install and Build
-        # Removed "cd firebase-login" because your files are in the root
+        # Removed "cd ./dist" because your files are in the root
         run: |
           npm install
           npm run build
