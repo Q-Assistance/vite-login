@@ -26,7 +26,7 @@ jobs:
           node-version: 22
 
       - name: Install and Build
-        # Removed "cd ./dist" because your files are in the root
+        # We run this in the root because your package.json is in the root
         run: |
           npm install
           npm run build
@@ -34,7 +34,7 @@ jobs:
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          # Point directly to the 'dist' folder created in the root
+          # Vite outputs the production files to the 'dist' folder
           path: ./dist
 
   deploy:
@@ -46,5 +46,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-
         uses: actions/deploy-pages@v4
