@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Vite outputs the production files to the 'dist' folder
-          path: ./dist
+          path: firebase-login
 
   deploy:
     needs: build
